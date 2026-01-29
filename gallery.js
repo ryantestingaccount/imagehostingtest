@@ -1,7 +1,7 @@
 const cloudName = "dqvntouzt";
 const apiKey = "497127618157259";
 
-const url = `https://api.cloudinary.com/v1_1/${cloudName}/resources/image?max_results=30`;
+const url = `https://api.cloudinary.com/v1_1/$dqvntouzt/resources/image?max_results=30`;
 
 fetch(url, {
   headers: {
