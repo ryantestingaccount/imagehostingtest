@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Downloading Image...</title>
+</head>
+<body>
+
+<p>Your download should begin automatically.</p>
+
+<script>
+  const params = new URLSearchParams(window.location.search);
+  const imageUrl = params.get("img");
+
+  if (!imageUrl) {
+    document.body.innerHTML = "<p>No image specified.</p>";
+  } else {
+    const a = document.createElement("a");
+    a.href = imageUrl;
+    a.download = "image";
+    document.body.appendChild(a);
+    a.click();
+    document.body.removeChild(a);
+  }
+</script>
+
+</body>
+</html>
