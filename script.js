@@ -17,9 +17,15 @@ function uploadImage() {
   })
   .then(res => res.json())
   .then(data => {
-    const img = document.createElement("img");
-    img.src = data.secure_url;
-    document.getElementById("gallery").appendChild(img);
-  })
+  const downloadUrl =
+    `download.html?img=${encodeURIComponent(data.secure_url)}`;
+
+  const link = document.createElement("a");
+  link.href = downloadUrl;
+  link.textContent = "Download image";
+  link.target = "_blank";
+
+  document.getElementById("gallery").appendChild(link);
+});
   .catch(err => console.error(err));
 }
