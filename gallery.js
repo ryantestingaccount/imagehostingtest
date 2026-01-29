@@ -1,5 +1,5 @@
-const cloudName = "YOUR_CLOUD_NAME";
-const apiKey = "YOUR_READ_ONLY_API_KEY";
+const cloudName = "dqvntouzt";
+const apiKey = "497127618157259";
 
 const url = `https://api.cloudinary.com/v1_1/${cloudName}/resources/image?max_results=30`;
 
