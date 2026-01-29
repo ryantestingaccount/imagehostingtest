@@ -17,6 +17,13 @@ function uploadImage() {
   })
   .then(res => res.json())
   .then(data => {
+
+  // ✅ NEW: save image URL locally
+  let images = JSON.parse(localStorage.getItem("images") || "[]");
+  images.push(data.secure_url);
+  localStorage.setItem("images", JSON.stringify(images));
+
+  // Build download link
   const downloadUrl =
     `download.html?img=${encodeURIComponent(data.secure_url)}`;
 
